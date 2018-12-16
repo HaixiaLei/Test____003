@@ -1,0 +1,13 @@
+platform :ios, '9.0'
+inhibit_all_warnings!
+target 'HG6668' do
+
+pod "AFNetworking", '~> 3.2.1'
+
+end
+
+target 'HG00551' do
+
+pod "AFNetworking", '~> 3.2.1'
+
+end
