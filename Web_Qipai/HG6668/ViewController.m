@@ -14,6 +14,8 @@
 
 @property(nonatomic, assign) BOOL successLoad;
 
+@property(nonatomic, copy) NSString *agent;
+
 @end
 
 @implementation ViewController{
@@ -25,6 +27,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //获取渠道号
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"qvdao" ofType:@"json"];
+    if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
+        _agent = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+    }
+    
+    
+    
     launchImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:launchImageView];
     
@@ -80,13 +91,12 @@
     [self getYuming];
     
     
-    //测试测试
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 300, 50)];
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"qvdao" ofType:@"json"];
-    NSString *str = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
-    label.text = str;
-    label.font = [UIFont boldSystemFontOfSize:25];
+    
+    //测试测试测试   
+    UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
+    label.text = _agent;
     [self.view addSubview:label];
+    label.font = [UIFont systemFontOfSize:25];
 }
 
 - (void)loadGame {
@@ -205,9 +215,15 @@
 /*加载网页*/
 - (void)loadWebView {
     NSString *urlstring = [[NSUserDefaults standardUserDefaults] objectForKey:@"url"];
+
     if (!urlstring || !urlstring.length) {
         urlstring = HOST_P;
     }
+    
+    if (_agent && _agent.length) {
+        urlstring = [[NSString stringWithFormat:@"%@?code=%@",urlstring,_agent] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    }
+    
     NSURL *url = [NSURL URLWithString:urlstring];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
     [_webView loadRequest:request];
@@ -220,7 +236,5 @@
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     _successLoad = YES;
 }
-
-#pragma mark UIAlertView 代理方法
 
 @end
