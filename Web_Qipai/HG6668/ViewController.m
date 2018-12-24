@@ -32,6 +32,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource:@"qvdao" ofType:@"json"];
     if ([[NSFileManager defaultManager] fileExistsAtPath:path]) {
         _agent = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:NULL];
+        _agent = [_agent stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }
     
     
@@ -91,12 +92,23 @@
     [self getYuming];
     
     
-    
-    //测试测试测试   
-    UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
-    label.text = _agent;
-    [self.view addSubview:label];
-    label.font = [UIFont systemFontOfSize:25];
+    UIView *agentButton = [[UIView alloc] initWithFrame:CGRectMake(0, 40, 30, 30)];
+    agentButton.backgroundColor = [UIColor clearColor];
+    [self.view addSubview:agentButton];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onAgentButtonTap)];
+    tap.numberOfTapsRequired = 5;
+    [agentButton addGestureRecognizer:tap];
+}
+
+- (void)onAgentButtonTap {
+    if (_agent && _agent.length) {
+        UILabel *label = [[UILabel alloc] initWithFrame:self.view.bounds];
+        label.text = _agent;
+        [self.view addSubview:label];
+        label.textAlignment = NSTextAlignmentCenter;
+        label.font = [UIFont systemFontOfSize:36];
+        [label performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:5];
+    }
 }
 
 - (void)loadGame {
