@@ -371,9 +371,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage2;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 98884Q79MT;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Qiang Song (V96442L257)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V96442L257;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"ProductID=2",
@@ -383,10 +383,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cybertech.tyqphg0086;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cybwe.sd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "482db876-2c09-4e19-b54d-727e76815a30";
-				PROVISIONING_PROFILE_SPECIFIER = pro_tyqp0086_dev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -397,19 +397,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon2;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage2;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 98884Q79MT;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Qiang Song (V96442L257)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V96442L257;
 				GCC_PREPROCESSOR_DEFINITIONS = "ProductID=2";
 				INFOPLIST_FILE = "$(SRCROOT)/HG6668/AppNames/HG00551/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cybertech.tyqphg0086;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cybwe.sd;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "3883183b-2058-4eab-9632-0ecdbdea9679";
-				PROVISIONING_PROFILE_SPECIFIER = pro_tyqp0086_dis;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -531,8 +531,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon1;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage1;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 98884Q79MT;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V96442L257;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"ProductID=1",
@@ -542,10 +542,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cybertech.tyqphg6668;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abcdd.tyqphg6668;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "d3fc57eb-3407-4d1f-abf6-a54a848af8bb";
-				PROVISIONING_PROFILE_SPECIFIER = pro_tyqp6668_dev;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -556,19 +556,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon1;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage1;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = 98884Q79MT;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = V96442L257;
 				GCC_PREPROCESSOR_DEFINITIONS = "ProductID=1";
 				INFOPLIST_FILE = "$(SRCROOT)/HG6668/AppNames/HG6668/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.cybertech.tyqphg6668;
+				PRODUCT_BUNDLE_IDENTIFIER = com.abcdd.tyqphg6668;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c5b71747-731e-49ac-8714-063ccab9f318";
-				PROVISIONING_PROFILE_SPECIFIER = pro_tyqp6668_dis;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

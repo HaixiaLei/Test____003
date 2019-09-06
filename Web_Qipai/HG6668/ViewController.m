@@ -86,8 +86,19 @@
     launchImageView.image = launchImage;
     
     _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+    _webView.backgroundColor = [UIColor blackColor];
+    
+    if (@available(iOS 11.0, *)) {
+        if ([_webView.scrollView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
+            _webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        }
+    }
+    
+    
     _webView.delegate = self;
     [self.view insertSubview:_webView belowSubview:launchImageView];
+    
+
     
     [self getYuming];
     
@@ -99,6 +110,11 @@
     tap.numberOfTapsRequired = 5;
     [agentButton addGestureRecognizer:tap];
 }
+
+- (BOOL)prefersHomeIndicatorAutoHidden {
+    return YES;
+}
+
 
 - (void)onAgentButtonTap {
     if (_agent && _agent.length) {
